@@ -37,3 +37,6 @@ gen-proof:
 # generate smart contract verify of the proof
 gen-sol-verify:
 	snarkjs zkey export solidityverifier zkey/square_and_sum0001.zkey verifier/square_and_sum.sol
+
+gencall:
+	snarkjs generatecall json/public.json json/proof.json > generatecall/square_and_sum.txt
