@@ -34,9 +34,16 @@ ex-zkey:
 gen-proof:
 	snarkjs groth16 prove zkey/square_and_sum0001.zkey witness/witness.wtns json/proof.json json/public.json
 
+# check proof is correct if change variable in proof.json or value in public.json the result is false
+verify-proof:
+	snarkjs groth16 verify json/verification_key.json json/public.json json/proof.json
+
 # generate smart contract verify of the proof
 gen-sol-verify:
 	snarkjs zkey export solidityverifier zkey/square_and_sum0001.zkey verifier/square_and_sum.sol
 
+# generalcall the data for smart contract verify
 gencall:
 	snarkjs generatecall json/public.json json/proof.json > generatecall/square_and_sum.txt
+
+
