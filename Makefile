@@ -45,5 +45,3 @@ gen-sol-verify:
 # generalcall the data for smart contract verify
 gencall:
 	snarkjs generatecall json/public.json json/proof.json > generatecall/square_and_sum.txt
-
-
